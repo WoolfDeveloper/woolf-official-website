@@ -244,4 +244,10 @@ body[data-theme="dark"] {
       }
     }
   }
+
+  .author {
+    .author-avatar {
+      box-shadow: 1px 1px 20px $dark-white;
+    }
+  }
 }
