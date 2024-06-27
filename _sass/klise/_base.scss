@@ -239,8 +239,7 @@ a {
   }
 
   &:focus {
-    outline: 3px solid rgba(0, 54, 199, 0.6);
-    outline-offset: 2px;
+    border-bottom: 1px solid $text-link-blue;
   }
 }
 
@@ -367,3 +366,13 @@ mark,
     }
   }
 }
+
+.long-banner-container {
+  .long-banner {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    object-position: bottom;
+  }
+}
+
