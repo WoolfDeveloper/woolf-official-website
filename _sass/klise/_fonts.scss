@@ -710,3 +710,43 @@
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
+
+@font-face {
+  font-family: "whacky-joe";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/whacky-joe/Whacky_Joe.woff2")
+}
+
+@font-face {
+  font-family: "whacky-joe-monospaced";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/whacky-joe/Whacky_Joe_Monospaced.woff2")
+}
+
+@font-face {
+  font-family: "jetbrains-mono";
+  font-style: normal;
+  src: url("../../assets/fonts/jetbrains-mono/JetBrainsMono-VariableFont_wght.woff2");
+}
+
+@font-face {
+  font-family: "jetbrains-mono";
+  font-style: italic;
+  src: url("../../assets/fonts/jetbrains-mono/JetBrainsMono-VariableFont-Italic_wght.woff2");
+}
+
+@font-face {
+  font-family: "fipps-regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/fipps-regular/Fipps-Regular.woff2");
+}
+
+@font-face {
+  font-family: "kiwisoda";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/kiwisoda/KiwiSoda.woff2");
+}

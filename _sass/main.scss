@@ -1,10 +1,16 @@
 // Fonts preferences
 $sans-family: Roboto, sans-serif;
 $mono-family: Consolas, monospace;
-$base-font-size: 16px;
+$primary-font: "jetbrains-mono";
+$whacky-family: "whacky-joe";
+$test-family: "fipps-regular";
+$base-font-size: 14px;
 $medium-font-size: $base-font-size * 0.938;
 $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.85;
+
+// Author variables
+$author-font-size: 16px;
 
 // Font weight
 // $light-weight: 300; // uncomment if necessary
