@@ -54,6 +54,19 @@ $on-tablet: 769px;
 $on-desktop: 1024px;
 $on-widescreen: 1152px;
 
+// Social Media Image Routes
+$dark-twitch-icon: url("../../assets/icons/social-media/white/twitch-icon-white.webp");
+$dark-twitter-icon: url("../../assets/icons/social-media/white/twitter-icon-white.webp");
+$dark-discord-icon: url("../../assets/icons/social-media/white/discord-icon-white.webp");
+$dark-youtube-icon: url("../../assets/icons/social-media/white/youtube-icon-white.webp");
+$dark-instagram-icon: url("../../assets/icons/social-media/white/insta-icon-white.webp");
+
+$twitch-icon: url("../../assets/icons/social-media/dark/twitch-icon-dark.webp");
+$twitter-icon: url("../../assets/icons/social-media/dark/twitter-icon-dark.webp");
+$discord-icon: url("../../assets/icons/social-media/dark/discord-icon-dark.webp");
+$youtube-icon: url("../../assets/icons/social-media/dark/youtube-icon-dark.webp");
+$instagram-icon: url("../../assets/icons/social-media/dark/insta-icon-dark.webp");
+
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;

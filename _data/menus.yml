@@ -2,8 +2,8 @@
   url: /
   external: false
 
-- title: archive
-  url: /archive/
+- title: devlogs
+  url: /devlogs/
   external: false
 
 - title: about

@@ -250,4 +250,31 @@ body[data-theme="dark"] {
       box-shadow: 1px 1px 20px $dark-white;
     }
   }
+
+  .social-media-container {
+    .social-medias {
+      .twitch-icon {
+        background-image: $dark-twitch-icon;
+      }
+  
+      .twitter-icon {
+        background-image: $dark-twitter-icon;
+      }
+  
+      .discord-icon {
+        background-image: $dark-discord-icon;
+      }
+  
+      .youtube-icon {
+        background-image: $dark-youtube-icon;
+      }
+  
+      .instagram-icon {
+        background-image: $dark-instagram-icon;
+      }
+    }
+  }
+
 }
+
+

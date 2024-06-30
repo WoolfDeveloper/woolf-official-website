@@ -376,3 +376,50 @@ mark,
   }
 }
 
+.social-media-container {
+  margin: 1rem 0px 2rem 0px;
+
+  .social-media-title {
+
+  }
+
+  .social-medias {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .social-media {
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      image-rendering: pixelated;
+    }
+
+    .twitch-icon {
+      background-image: $twitch-icon;
+    }
+
+    .twitter-icon {
+      background-image: $twitter-icon;
+    }
+
+    .discord-icon {
+      background-image: $discord-icon;
+    }
+
+    .youtube-icon {
+      background-image: $youtube-icon;
+    }
+
+    .instagram-icon {
+      background-image: $instagram-icon;
+    }
+
+  }
+}
+
+
