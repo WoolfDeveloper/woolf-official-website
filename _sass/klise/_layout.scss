@@ -189,6 +189,7 @@
 
   @include media-query($on-mobile) {
     margin-bottom: 3em;
+    margin-top: 3em;
   }
 
   .author-avatar {
