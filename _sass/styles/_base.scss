@@ -383,14 +383,14 @@ mark,
 
   }
 
-  .social-medias {
+  .social-media {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 10px;
 
-    .social-media {
+    .social-icon {
       width: 50px;
       height: 50px;
       background-size: cover;
@@ -419,6 +419,96 @@ mark,
       background-image: $instagram-icon;
     }
 
+  }
+}
+
+.contact-form {
+  .name-and-mail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include media-query($on-mobile) {
+      flex-direction: column;
+      gap: 0px;
+    }
+  }
+
+  .success-msg {
+    color: green;
+  }
+
+  .form-section {
+    margin-top: 10px;
+
+    @include media-query($on-mobile) {
+      margin-top: 20px;
+    }
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: $black 2px solid;
+    padding: 5px;
+    font-size: 15px;
+    background: none;
+    font-family: $primary-font;
+
+    &::placeholder {
+      color: $gray;
+    }
+    
+    &:focus {
+      border: none;
+      border-bottom: $text-link-blue 2px solid;
+    }
+
+    &:active {
+      border: none;
+      border-bottom: $text-link-blue 2px solid;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 200px;
+    font-size: 14px;
+    background: none;
+    padding: 5px;
+    border: black 2px solid;
+    font-family: $primary-font;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus {
+      border: $text-link-blue 2px solid;
+    }
+
+    &:active {
+      border: $text-link-blue 2px solid;
+    }
+  }
+
+  button[type="submit"] {
+    width: 100px;
+    padding: 10px;
+    background-color: $text-link-blue;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-family: $whacky-family;
+    font-size: 14px;
+
+
+    &:hover {
+      background-color: $text-link-blue-active;
+    }
   }
 }
 

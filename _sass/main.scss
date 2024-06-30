@@ -78,5 +78,5 @@ $instagram-icon: url("../../assets/icons/social-media/dark/insta-icon-dark.webp"
 }
 
 // Import sass files
-@import "klise/fonts", "klise/base", "klise/layout", "klise/post",
-  "klise/miscellaneous", "klise/syntax", "klise/dark";
+@import "styles/fonts", "styles/base", "styles/layout", "styles/post",
+  "styles/miscellaneous", "styles/syntax", "styles/dark", "styles/helper";

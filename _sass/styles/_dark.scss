@@ -252,7 +252,7 @@ body[data-theme="dark"] {
   }
 
   .social-media-container {
-    .social-medias {
+    .social-media {
       .twitch-icon {
         background-image: $dark-twitch-icon;
       }
@@ -271,6 +271,51 @@ body[data-theme="dark"] {
   
       .instagram-icon {
         background-image: $dark-instagram-icon;
+      }
+    }
+  }
+
+  .contact-form {
+    input {
+      color: $dark-text-base-color;
+      border-bottom: $dark-white 2px solid;
+      
+      &::placeholder {
+        color: $dark-gray;
+      }
+
+      &:focus {
+        border-bottom: $dark-text-link-blue 2px solid;
+      }
+
+      &:active {
+        border-bottom: $dark-text-link-blue 2px solid;
+      }
+    };
+
+    textarea {
+      color: $dark-text-base-color;
+      border: $dark-white 2px solid;
+      
+      &::placeholder {
+        color: $dark-gray;
+      }
+
+      &:focus {
+        border: $dark-text-link-blue 2px solid;
+      }
+
+      &:active {
+        border: $dark-text-link-blue 2px solid;
+      }
+    }
+
+    button[type="submit"] {
+      background-color: $dark-text-link-blue;
+      color: $dark-white;
+
+      &:hover {
+        background-color: $dark-text-link-blue-active;
       }
     }
   }

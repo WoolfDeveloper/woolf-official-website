@@ -1,0 +1,70 @@
+---
+title: Contact
+permalink: /contact/
+layout: page
+excerpt: Contact page.
+comments: false
+---
+<div class="wrapper">
+    <div class="contact-form">
+        <div class="success-msg"></div>
+        <form action="https://formkeep.com/f/918dc554cfa6" accept-charset="UTF-8" enctype="multipart/form-data"
+            method="POST" onsubmit="event.preventDefault(); putSuccesfulMsg();">
+            <input type="hidden" name="utf8" value="✓">
+            <div class="name-and-mail">
+                <div class="form-section">
+                    <label for="user-name">Name / Nickname *</label>
+                    <input type="text" id="user-name" name="name" placeholder="John Doe">
+                </div>
+        
+                <div class="form-section">
+                    <label for="email-address">Email Address *</label>
+                    <input type="email" id="email-address" name="email" placeholder="johndoe@woolfgamedev.com">
+                </div>
+            </div>
+    
+            <div class="form-section">
+                <label for="user-message">Message *</label>
+                <textarea id="user-message" name="message" placeholder="Hello..."></textarea>
+            </div>
+    
+            <div class="flex-justify-center">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const successMsg = "The contact message has been sent successfully. Thank you!";
+
+    function putSuccesfulMsg() {
+            const msgDiv = document.querySelector('.success-msg');
+            msgDiv.textContent = '';
+            
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < successMsg.length) {
+                    msgDiv.textContent += successMsg[index];
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(removeSuccesfulMsg, 5000);
+                }
+            }, 50);
+        }
+        
+        function removeSuccesfulMsg() {
+            const msgDiv = document.querySelector('.success-msg');
+            let index = successMsg.length;
+            
+            const interval = setInterval(() => {
+                if (index > 0) {
+                    msgDiv.textContent = msgDiv.textContent.slice(0, -1);
+                    index--;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 50);
+        }
+</script>
