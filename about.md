@@ -8,7 +8,7 @@ comments: false
 
 # ✨ IN PROGRESS ✨
 
-**may u needs ✨**
+**just in case... ✨**
 
 - [{{ site.author.email }}](mailto:{{ site.author.email}})
 - <a href="https://github.com/{{ site.author.github }}" target="_blank">github.com/{{ site.author.github }}</a>
