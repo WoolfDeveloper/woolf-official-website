@@ -455,6 +455,7 @@ mark,
     font-size: 15px;
     background: none;
     font-family: $primary-font;
+    border-radius: 0px;
 
     &::placeholder {
       color: $gray;
@@ -479,6 +480,7 @@ mark,
     padding: 5px;
     border: black 2px solid;
     font-family: $primary-font;
+    border-radius: 0px;
 
     &::placeholder {
       color: $gray;
