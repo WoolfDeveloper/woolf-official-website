@@ -461,12 +461,12 @@ mark,
     }
     
     &:focus {
-      border: none;
+      outline: none;
       border-bottom: $text-link-blue 2px solid;
     }
 
     &:active {
-      border: none;
+      outline: none;
       border-bottom: $text-link-blue 2px solid;
     }
   }
@@ -485,10 +485,12 @@ mark,
     }
 
     &:focus {
+      outline: none;
       border: $text-link-blue 2px solid;
     }
 
     &:active {
+      outline: none;
       border: $text-link-blue 2px solid;
     }
   }
