@@ -8,8 +8,8 @@ comments: false
 <div class="wrapper">
     <div class="contact-form">
         <div class="success-msg"></div>
-        <form action="https://formkeep.com/f/918dc554cfa6" accept-charset="UTF-8" enctype="multipart/form-data"
-            method="POST" onsubmit="event.preventDefault(); putSuccesfulMsg();">
+        <form id="contact-form" action="https://formkeep.com/f/918dc554cfa6" accept-charset="UTF-8" enctype="multipart/form-data"
+            method="POST">
             <input type="hidden" name="utf8" value="✓">
             <div class="name-and-mail">
                 <div class="form-section">
@@ -38,33 +38,58 @@ comments: false
 <script>
     const successMsg = "The contact message has been sent successfully. Thank you!";
 
-    function putSuccesfulMsg() {
-            const msgDiv = document.querySelector('.success-msg');
-            msgDiv.textContent = '';
-            
-            let index = 0;
-            const interval = setInterval(() => {
-                if (index < successMsg.length) {
-                    msgDiv.textContent += successMsg[index];
-                    index++;
-                } else {
-                    clearInterval(interval);
-                    setTimeout(removeSuccesfulMsg, 5000);
-                }
-            }, 50);
-        }
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        putSuccesfulMsg();
         
-        function removeSuccesfulMsg() {
-            const msgDiv = document.querySelector('.success-msg');
-            let index = successMsg.length;
-            
-            const interval = setInterval(() => {
-                if (index > 0) {
-                    msgDiv.textContent = msgDiv.textContent.slice(0, -1);
-                    index--;
-                } else {
-                    clearInterval(interval);
-                }
-            }, 50);
-        }
+        // Create a FormData object from the form
+        const formData = new FormData(this);
+        
+        // Send the form data using fetch
+        fetch(this.action, {
+            method: this.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json',
+            },
+        }).then(response => {
+            if (response.ok) {
+                console.log('Form successfully submitted');
+            } else {
+                console.error('Form submission error:', response.statusText);
+            }
+        }).catch(error => {
+            console.error('Form submission error:', error);
+        });
+    });
+
+    function putSuccesfulMsg() {
+        const msgDiv = document.querySelector('.success-msg');
+        msgDiv.textContent = '';
+        
+        let index = 0;
+        const interval = setInterval(() => {
+            if (index < successMsg.length) {
+                msgDiv.textContent += successMsg[index];
+                index++;
+            } else {
+                clearInterval(interval);
+                setTimeout(removeSuccesfulMsg, 5000);
+            }
+        }, 50);
+    }
+        
+    function removeSuccesfulMsg() {
+        const msgDiv = document.querySelector('.success-msg');
+        let index = successMsg.length;
+        
+        const interval = setInterval(() => {
+            if (index > 0) {
+                msgDiv.textContent = msgDiv.textContent.slice(0, -1);
+                index--;
+            } else {
+                clearInterval(interval);
+            }
+        }, 50);
+    }
 </script>
