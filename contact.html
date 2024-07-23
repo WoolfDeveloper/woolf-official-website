@@ -36,11 +36,19 @@ comments: false
 </div>
 
 <script>
-    const successMsg = "The contact message has been sent successfully. Thank you!";
+    const successMsg = "Sending message...";
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        putSuccesfulMsg();
+        const userNameInput = document.getElementById('user-name');
+        const emailAddressInput = document.getElementById('email-address');
+        const userMessageInput = document.getElementById('user-message');
+        if (userNameInput.value == '' || emailAddressInput.value == '' || userMessageInput.value == '') {
+            console.warn("No data in form")
+            return;
+        }
+        
+        await putSuccesfulMsg();
         
         // Create a FormData object from the form
         const formData = new FormData(this);
@@ -63,7 +71,7 @@ comments: false
         });
     });
 
-    function putSuccesfulMsg() {
+    async function putSuccesfulMsg() {
         const msgDiv = document.querySelector('.success-msg');
         msgDiv.textContent = '';
         
@@ -77,6 +85,8 @@ comments: false
                 setTimeout(removeSuccesfulMsg, 5000);
             }
         }, 50);
+        
+        return;
     }
         
     function removeSuccesfulMsg() {
