@@ -86,12 +86,12 @@ comments: false
                 index++;
             } else {
                 clearInterval(interval);
-                setTimeout(removeSuccessfulMsg, 5000);
+                setTimeout(removeSuccessfulMsg, 1000);
             }
         }, 50);
         
         return new Promise(resolve => {
-            setTimeout(resolve, successMsg.length * 50 + 5000); // Tiempo para mostrar el mensaje completamente y esperar 5 segundos
+            setTimeout(resolve, successMsg.length * 50 + 1000); // Tiempo para mostrar el mensaje completamente y esperar 5 segundos
         });
     }
         
