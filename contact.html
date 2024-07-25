@@ -7,27 +7,33 @@ comments: false
 ---
 <div class="wrapper">
     <div class="contact-form">
-        <div class="success-msg"></div>
-        <form id="contact-form" action="https://formkeep.com/f/918dc554cfa6" accept-charset="UTF-8" enctype="multipart/form-data"
-            method="POST">
+        <div class="contact-msg">
+            <div class="neutral-msg d-none"></div>
+            <div class="error-msg d-none"></div>
+            <div class="success-msg d-none"></div>
+        </div>
+        <!-- TEST ACTION: https://formkeep.com/f/623a08e5006a -->
+        <!-- REAL ACTION: https://formkeep.com/f/918dc554cfa6 -->
+        <!-- <form id="contact-form" action="https://formkeep.com/f/623a08e5006a" accept-charset="UTF-8" enctype="multipart/form-data" -->
+        <form id="contact-form" action="https://formkeep.com/f/623a08e5006a" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="utf8" value="✓">
             <div class="name-and-mail">
                 <div class="form-section">
                     <label for="user-name">Name / Nickname *</label>
-                    <input type="text" id="user-name" name="name" placeholder="John Doe" required>
+                    <input type="text" id="user-name" name="name" placeholder="John Doe">
                 </div>
-        
+
                 <div class="form-section">
                     <label for="email-address">Email Address *</label>
-                    <input type="email" id="email-address" name="email" placeholder="johndoe@woolfgamedev.com" required>
+                    <input type="email" id="email-address" name="email" placeholder="johndoe@woolfgamedev.com">
                 </div>
             </div>
-    
+
             <div class="form-section">
                 <label for="user-message">Message *</label>
-                <textarea id="user-message" name="message" placeholder="Hello..." required></textarea>
+                <textarea id="user-message" name="message" placeholder="Hello..."></textarea>
             </div>
-    
+
             <div class="flex-justify-center">
                 <button type="submit">Send</button>
             </div>
@@ -35,77 +41,79 @@ comments: false
     </div>
 </div>
 
-<script>
-    const successMsg = "Sending message...";
+<!-- <script src="assets/js/contact-form.js"></script> -->
 
-    document.getElementById('contact-form').addEventListener('submit', async function(event) {
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', contactFormSubmit);
+    });
+
+    const successMsg = "Sending message...";
+    const validatingMsg = "Validating... ";
+    const allOKMsg = "Successful...";
+    const validationErrorMsg = "Unsuccessful...";
+
+    async function contactFormSubmit(event) {
         event.preventDefault();
-        
+        console.log('Form submit event prevented');
+
+        resetMessages();
+
         const userNameInput = document.getElementById('user-name');
         const emailAddressInput = document.getElementById('email-address');
         const userMessageInput = document.getElementById('user-message');
-        
-        // Validar campos
+
+        const neutralMsgElement = document.querySelector('.neutral-msg');
+        const errorMsgElement = document.querySelector('.error-msg');
+        const successMsgElement = document.querySelector('.success-msg');
+
+        await showMessage(neutralMsgElement, validatingMsg);
+
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
         if (userNameInput.value.trim() === '' || emailAddressInput.value.trim() === '' || userMessageInput.value.trim() === '') {
-            console.log("No data in form");
+            await showMessage(errorMsgElement, validationErrorMsg);
             return;
         }
-        
-        // Mostrar mensaje de "Sending message..."
-        await putSuccessfulMsg();
 
-        // Crear objeto FormData del formulario
-        const formData = new FormData(this);
-        
-        // Enviar datos del formulario usando fetch
-        fetch(this.action, {
-            method: this.method,
-            body: formData,
-            headers: {
-                'Accept': 'application/json',
-            },
-        }).then(response => {
-            if (response.ok) {
-                console.log('Form successfully submitted');
-            } else {
-                console.error('Form submission error:', response.statusText);
-            }
-        }).catch(error => {
-            console.error('Form submission error:', error);
-        });
-    });
+        await showMessage(successMsgElement, allOKMsg);
 
-    async function putSuccessfulMsg() {
-        const msgDiv = document.querySelector('.success-msg');
-        msgDiv.textContent = '';
-        
-        let index = 0;
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        resetMessages();
+
+        await showMessage(successMsgElement, successMsg);
+
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        this.submit();
+    }
+
+    async function showMessage(element, phrase) {
+        element.classList.remove('d-none');
+        const intervalValue = 50;
+        let idx = 0;
         const interval = setInterval(() => {
-            if (index < successMsg.length) {
-                msgDiv.textContent += successMsg[index];
-                index++;
+            if (idx < phrase.length) {
+                element.textContent += phrase[idx];
+                idx++;
             } else {
                 clearInterval(interval);
-                setTimeout(removeSuccessfulMsg, 1000);
             }
-        }, 50);
-        
+        }, intervalValue);
+
         return new Promise(resolve => {
-            setTimeout(resolve, successMsg.length * 50 + 1000); // Tiempo para mostrar el mensaje completamente y esperar 5 segundos
+            setTimeout(resolve, phrase.length * intervalValue);
         });
     }
-        
-    function removeSuccessfulMsg() {
-        const msgDiv = document.querySelector('.success-msg');
-        let index = successMsg.length;
-        
-        const interval = setInterval(() => {
-            if (index > 0) {
-                msgDiv.textContent = msgDiv.textContent.slice(0, -1);
-                index--;
-            } else {
-                clearInterval(interval);
-            }
-        }, 50);
+
+    function resetMessages() {
+        document.querySelector('.neutral-msg').textContent = '';
+        document.querySelector('.neutral-msg').classList.add('d-none');
+        document.querySelector('.error-msg').textContent = '';
+        document.querySelector('.error-msg').classList.add('d-none');
+        document.querySelector('.success-msg').textContent = '';
+        document.querySelector('.success-msg').classList.add('d-none');
     }
 </script>

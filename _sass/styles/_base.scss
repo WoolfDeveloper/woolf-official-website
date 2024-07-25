@@ -444,9 +444,24 @@ mark,
     }
   }
 
-  .success-msg {
-    color: green;
+  .contact-msg {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .neutral-msg {
+      color: yellow
+    }
+
+    .error-msg {
+      color: red;
+    }
+
+    .success-msg {
+      color: green;
+    }
   }
+
 
   .form-section {
     margin-top: 10px;
@@ -525,4 +540,6 @@ mark,
   }
 }
 
-
+.d-none {
+  display: none;
+}
