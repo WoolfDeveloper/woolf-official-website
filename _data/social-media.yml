@@ -3,6 +3,11 @@
   class: twitch-icon
   external: true
 
+- title: itch.io
+  url: https://woolf-ux.itch.io
+  class: itch-icon
+  external: true
+
 - title: twitter
   url: https://x.com/WoolfDev
   class: twitter-icon

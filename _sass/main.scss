@@ -60,12 +60,14 @@ $dark-twitter-icon: url("../../assets/icons/social-media/white/twitter-icon-whit
 $dark-discord-icon: url("../../assets/icons/social-media/white/discord-icon-white.webp");
 $dark-youtube-icon: url("../../assets/icons/social-media/white/youtube-icon-white.webp");
 $dark-instagram-icon: url("../../assets/icons/social-media/white/insta-icon-white.webp");
+$dark-itch-icon: url("../../assets/icons/social-media/white/itch-icon-white.webp");
 
 $twitch-icon: url("../../assets/icons/social-media/dark/twitch-icon-dark.webp");
 $twitter-icon: url("../../assets/icons/social-media/dark/twitter-icon-dark.webp");
 $discord-icon: url("../../assets/icons/social-media/dark/discord-icon-dark.webp");
 $youtube-icon: url("../../assets/icons/social-media/dark/youtube-icon-dark.webp");
 $instagram-icon: url("../../assets/icons/social-media/dark/insta-icon-dark.webp");
+$itch-icon: url("../../assets/icons/social-media/dark/itch-icon-dark.webp");
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
