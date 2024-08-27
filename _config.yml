@@ -3,7 +3,7 @@ title: Woolf Official Website # site title
 description: >- # site description
   This is the official page of the Woolf video game developer.
 lang: en-US # default lang
-timezone: europe/madrid # default timezone
+timezone: Europe/Madrid # default timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 mode: dark # default theme "dark" | "light"
 
