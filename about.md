@@ -7,7 +7,7 @@ comments: false
 ---
 
 ## 👋  Hi there, I'm Woolf
-I'm a Web Developer, Game Designer and Developer, CEO of [Rat's Paradox](){:target="_blank"} from Barcelona, Spain.
+I'm a Web Developer, Game Designer and Developer, CEO of [Rat's Paradox](https://ratsparadox.com){:target="_blank"} from Barcelona, Spain.
 
 ### 💻 Skills and knowledges
 - Pixelart
@@ -21,7 +21,8 @@ I'm a Web Developer, Game Designer and Developer, CEO of [Rat's Paradox](){:targ
 - C#
 
 ### 🎮 Games
-- [Parasitic Business 🕊️🧹](https://woolf-ux.itch.io/parasitic-business){:target="_blank"}
+- [Parasitic Business 🕊️🧹](https://store.steampowered.com/app/3433240/Parasitic_Business/){:target="_blank"}
+- [Parasitic Business Classic 🕊️🧹](https://woolf-ux.itch.io/parasitic-business){:target="_blank"}
 
 And other games, you can find them in my [itch.io](https://woolf-ux.itch.io){:target="_blank"}
 
